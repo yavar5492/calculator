@@ -4,15 +4,16 @@ const plusBtn = document.querySelectorAll(".btn-operators");
 const minusBtn = document.querySelector("#minus");
 const multiplied = document.querySelector("#multiplied");
 const equalEl = document.querySelector("#equal");
+const btnEL = document.querySelector("#btn-remove-value-input-previwe")
 
 let isResultShown = false;
 let b = 0;
 let operator = "";
+
 namberBtn.forEach(e => {
     e.addEventListener("click", (e) => {
+        btnEL.classList.add("display")
         var btn = e.currentTarget;
-        console.log(btn);
-
         if (isResultShown) {
             inputEl.value = "";
             isResultShown = false;
@@ -20,12 +21,11 @@ namberBtn.forEach(e => {
         inputEl.value += btn.textContent;
     })
 })
+
 plusBtn.forEach(e => {
     e.addEventListener("click", (ev) => {
         operator = e.getAttribute("id");
-        console.log(e);
         b = Number(inputEl.value);
-        console.log(b);
         inputEl.value = "";
     })
 })
@@ -53,7 +53,12 @@ equalEl.addEventListener("click", (e) => {
     if (typeof m === 'number' && !Number.isInteger(m)) {
         m = m.toFixed(5);
     }
-    console.log(m);
     inputEl.value = m;
     isResultShown = true;
+})
+btnEL.addEventListener("click", e => {
+    inputEl.value = inputEl.value.slice(0, -1);
+    if(inputEl.value == "") {
+        btnEL.classList.remove("display")
+    }
 })

@@ -16,11 +16,28 @@
     padding: 10px;
     border: 3px solid #1F0D65;
     width: 324px;
-    height: 90vh;
+    height: 650px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.input-previwe button{
+    all: unset;
+    background-color: #050211;
+    border: 3px solid #1F0D65;
+    color: #e3e3e3;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 9999px;
+}
+.display{
+    display: flex !important;
 }
 .number{
     background-color: #050211;
@@ -32,6 +49,7 @@
     width: 90%;
     display: flex;
     justify-content: center;
+    flex-direction: row-reverse;
     align-items: center;
     flex-wrap: wrap;
 }
@@ -63,6 +81,9 @@
     margin: 7px;
     background-color: #1F0D65;
 }
+.number button:active {
+    outline: 3px solid #3b14db;
+}
 .operators button{
     all: unset;
     width: 25px;
@@ -81,7 +102,8 @@
 .input-previwe{
     width: 90%;
     display: flex;
-    justify-content: center;
+    justify-content: end;
+    align-items: center;
     margin-bottom: 20px;
 }
 .input-previwe input{

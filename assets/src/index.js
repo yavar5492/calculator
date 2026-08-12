@@ -27,10 +27,9 @@ plusBtn.forEach(e => {
         operator = e.getAttribute("id");
         b = Number(inputEl.value);
         inputEl.value = "";
+        btnEL.classList.remove("display")
     })
 })
-
-
 
 equalEl.addEventListener("click", (e) => {
     var c = Number(inputEl.value);
@@ -49,6 +48,10 @@ equalEl.addEventListener("click", (e) => {
     }
     if (operator == "radical") {
         m = Math.sqrt(b);
+    }
+    if (operator == "clear") {
+        inputEl.value = b;
+        btnEL.classList.remove("display")
     }
     if (typeof m === 'number' && !Number.isInteger(m)) {
         m = m.toFixed(5);
